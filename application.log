@@ -6,3 +6,15 @@
 2022-08-01 11:53:51.841  WARN 1468 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2022-08-01 11:53:52.155  INFO 1468 --- [restartedMain] c.b.a.AddressBookAppApplication          : Started AddressBookAppApplication in 3.055 seconds (JVM running for 3.889)
 2022-08-01 11:53:52.158  INFO 1468 --- [restartedMain] c.b.a.AddressBookAppApplication          : Address Book Application Started in COMMON Environment
+2022-08-01 12:29:49.868  INFO 13556 --- [restartedMain] c.b.a.AddressBookAppApplication          : Starting AddressBookAppApplication using Java 18.0.2 on LAPTOP-JGIGE0P2 with PID 13556 (C:\CFP FullStack\AddressBookApp\target\classes started by HP in C:\CFP FullStack\AddressBookApp)
+2022-08-01 12:29:49.873 DEBUG 13556 --- [restartedMain] c.b.a.AddressBookAppApplication          : Running with Spring Boot v2.7.2, Spring v5.3.22
+2022-08-01 12:29:49.874  INFO 13556 --- [restartedMain] c.b.a.AddressBookAppApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-08-01 12:29:57.154  WARN 13556 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 12:29:57.992  INFO 13556 --- [restartedMain] c.b.a.AddressBookAppApplication          : Started AddressBookAppApplication in 8.905 seconds (JVM running for 10.926)
+2022-08-01 12:29:58.007  INFO 13556 --- [restartedMain] c.b.a.AddressBookAppApplication          : Address Book Application Started in COMMON Environment
+2022-08-01 12:36:35.256  INFO 9428 --- [restartedMain] c.b.a.AddressBookAppApplication          : Starting AddressBookAppApplication using Java 18.0.2 on LAPTOP-JGIGE0P2 with PID 9428 (C:\CFP FullStack\AddressBookApp\target\classes started by HP in C:\CFP FullStack\AddressBookApp)
+2022-08-01 12:36:35.259 DEBUG 9428 --- [restartedMain] c.b.a.AddressBookAppApplication          : Running with Spring Boot v2.7.2, Spring v5.3.22
+2022-08-01 12:36:35.261  INFO 9428 --- [restartedMain] c.b.a.AddressBookAppApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-08-01 12:36:39.651  WARN 9428 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-01 12:36:40.185  INFO 9428 --- [restartedMain] c.b.a.AddressBookAppApplication          : Started AddressBookAppApplication in 5.768 seconds (JVM running for 7.271)
+2022-08-01 12:36:40.190  INFO 9428 --- [restartedMain] c.b.a.AddressBookAppApplication          : Address Book Application Started in COMMON Environment
