@@ -22,7 +22,7 @@ public class AddressBookController {
 
     @GetMapping(value = {"/get/{personId}"})
     public ResponseEntity<ResponseDTO> getAddressBookData(@PathVariable int personId) {
-        AddressBookData addressBookData = new AddressBookData(101, new AddressBookDTO("Nikitha",
+        AddressBookData addressBookData = new AddressBookData(1, new AddressBookDTO("Nikitha",
                 "Reddy", "8498021579", "nikithachimmula97@gmail.com", "Hyderbad",
                 "Gachibowli", "Telangana", 500070));
         ResponseDTO responseDTO = new ResponseDTO("Success Call for Person Id!!!", addressBookData);
