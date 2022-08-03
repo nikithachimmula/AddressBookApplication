@@ -3,54 +3,54 @@ package com.bridgelabz.addressbookapp.service;
 import com.bridgelabz.addressbookapp.dto.AddressBookDTO;
 import com.bridgelabz.addressbookapp.exception.AddressBookException;
 import com.bridgelabz.addressbookapp.model.AddressBookData;
+import com.bridgelabz.addressbookapp.repository.AddressBookRepository;
+import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Service
 public class AddressBookService implements IAddressBookService {
-    List<AddressBookData> addressBookDataList = new ArrayList<>();
+
+    @Autowired
+  private   AddressBookRepository service;
+    @Autowired
+    private ModelMapper modelMapper;
 
     @Override
     public List<AddressBookData> getAddressBookData() {
-        return addressBookDataList;
+        return service.findAll();
     }
 
     @Override
     public AddressBookData getAddressBookDataById(int personId) {
-
-        AddressBookData addressBookData = addressBookDataList.stream()
-                .filter(persons -> persons.getPersonId() == personId)
-                .findFirst()
+        return service.findById(personId)
                 .orElseThrow(() -> new AddressBookException("Person not found In the List"));
-        return addressBookData;
     }
 
     @Override
     public AddressBookData createAddressBookData(AddressBookDTO addressBookDTO) {
-        AddressBookData addressBookData = new AddressBookData(addressBookDataList.size() + 1, addressBookDTO);
-        addressBookDataList.add(addressBookData);
+        //AddressBookData addressBookData = new AddressBookData(addressBookDTO);
+        AddressBookData addressBookData = modelMapper.map(addressBookDTO, AddressBookData.class);
+        service.save(addressBookData);
         return addressBookData;
     }
 
     @Override
     public AddressBookData updateAddressBookData(int personId, AddressBookDTO addressBookDTO) {
         AddressBookData addressBookData = this.getAddressBookDataById(personId);
-        addressBookData.setFirstName(addressBookDTO.firstName);
-        addressBookData.setLastName(addressBookDTO.lastName);
-        addressBookData.setPhoneNumber(addressBookDTO.phoneNumber);
-        addressBookData.setEmail(addressBookDTO.email);
-        addressBookData.setAddress(addressBookDTO.address);
-        addressBookData.setCity(addressBookDTO.city);
-        addressBookData.setState(addressBookDTO.state);
-        addressBookData.setZip(addressBookDTO.zip);
-        addressBookDataList.set(personId - 1, addressBookData);
+        //addressBookData.updateAddressBookData(addressBookDTO);
+        modelMapper.map(addressBookDTO, addressBookData);
+        service.save(addressBookData);
         return addressBookData;
     }
 
     @Override
     public void deleteAddressBookData(int personId) {
-        addressBookDataList.remove(personId - 1);
+        AddressBookData addressBookData = this.getAddressBookDataById(personId);
+        service.delete(addressBookData);
     }
 }
